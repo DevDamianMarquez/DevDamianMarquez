@@ -1,0 +1,81 @@
+{
+  "login": "DevDamianMarquez",
+  "name": "Damian Marquez",
+  "location": "Montevideo, Uruguay",
+  "timezone": "GMT-3",
+  "availability": "Open to backend roles",
+  "role_prefix": "Backend Developer",
+  "role_accent": "Python & AI Engineering",
+  "core_stack": ["Python", "FastAPI", "PostgreSQL", "Docker", "LLMs"],
+
+  "typing_lines": [
+    "Building reliable REST APIs with Python & FastAPI",
+    "Modeling data in PostgreSQL with SQLAlchemy",
+    "Integrating LLMs into real software, with tests around them",
+    "Backend Engineering  ·  AI Engineering"
+  ],
+
+  "stack": [
+    { "group": "Backend", "items": ["Python", "FastAPI", "Pydantic", "SQLAlchemy", "Alembic", "REST APIs", "pytest"] },
+    { "group": "Data", "items": ["PostgreSQL", "SQL", "Data modeling", "Neon"] },
+    { "group": "Security", "items": ["JWT", "Argon2 / bcrypt", "Auth & access control", "Rate limiting"] },
+    { "group": "AI", "items": ["OpenAI SDK", "Groq", "Meta Model API", "Structured JSON outputs", "Tool calling"] },
+    { "group": "Infra", "items": ["Docker", "Docker Compose", "Nginx", "GitHub Actions", "Render", "Vercel", "Cloudflare", "Linux"] },
+    { "group": "Frontend", "items": ["TypeScript", "React", "Next.js", "Tailwind CSS"] }
+  ],
+
+  "projects": [
+    {
+      "id": "forge",
+      "name": "FORGE",
+      "tag": "AI agent  ·  Meta AI Hackathon",
+      "status": "Hackathon build",
+      "description": "Multimodal engineering agent for mechanical systems. The LLM observes, models and proposes redesigns; deterministic Python tools compute gear ratios, RPM and constraints, so the model never does the math it reasons about.",
+      "tech": ["Python", "FastAPI", "Pydantic", "Meta Model API", "SAM", "Next.js", "pytest"],
+      "href": "https://github.com/DevDamianMarquez/forge-ai",
+      "footer": "github.com/DevDamianMarquez/forge-ai"
+    },
+    {
+      "id": "examgen",
+      "name": "ExamGen AI",
+      "tag": "Education SaaS  ·  LLM backend",
+      "status": "Open source",
+      "description": "FastAPI backend that turns a syllabus into a complete exam with an LLM: questions, answer key and rubric, exported as student and teacher PDFs. JWT auth, per-user authorization in every query, subscription gating.",
+      "tech": ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "JWT", "Groq", "Docker"],
+      "href": "https://github.com/DevDamianMarquez/examgen_ai",
+      "footer": "github.com/DevDamianMarquez/examgen_ai"
+    },
+    {
+      "id": "repuesthogar",
+      "name": "Repuesthogar",
+      "tag": "Client project  ·  Production",
+      "status": "In production",
+      "description": "Product catalog and admin panel built and deployed for a retail store in Uruguay. FastAPI + PostgreSQL API, JWT-protected admin, Argon2, login rate limiting, Cloudinary uploads, SEO prerendering.",
+      "tech": ["FastAPI", "PostgreSQL", "Alembic", "JWT", "Cloudinary", "React", "Cloudflare"],
+      "href": "https://repuesthogar.com",
+      "footer": "repuesthogar.com  ·  source private (client)"
+    },
+    {
+      "id": "nerva",
+      "name": "Nerva",
+      "tag": "AI operations workspace  ·  In progress",
+      "status": "Building",
+      "description": "Workspace where AI agents propose business actions and a human approves them. Through milestone 3: session auth, workspaces, approval flow and read-only Gmail import. Strict typing end to end.",
+      "tech": ["FastAPI", "SQLAlchemy 2", "Alembic", "PostgreSQL", "mypy", "Next.js"],
+      "href": "https://github.com/DevDamianMarquez/Nerva",
+      "footer": "github.com/DevDamianMarquez/Nerva"
+    }
+  ],
+
+  "links": [
+    { "id": "portfolio", "label": "Portfolio", "href": "https://damian-backend-portfolio.vercel.app" },
+    { "id": "linkedin", "label": "LinkedIn", "href": "https://www.linkedin.com/in/damian-marquez/" },
+    { "id": "email", "label": "Email", "href": "mailto:marquezdamianjob@gmail.com" },
+    { "id": "resume", "label": "Résumé", "href": "https://damian-backend-portfolio.vercel.app/cv.pdf" }
+  ],
+
+  "stats": {
+    "exclude_repos": ["DevDamianMarquez"],
+    "max_languages": 6
+  }
+}

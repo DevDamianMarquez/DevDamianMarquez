@@ -1,0 +1,56 @@
+name: Profile assets
+
+# Regenerates the README's SVG cards.
+# - Static assets (hero, stack, projects...) are rebuilt from profile.json.
+# - Activity cards are rebuilt from the public GitHub GraphQL API, daily.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - profile.json
+      - scripts/**
+      - .github/workflows/profile-assets.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-assets
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build static assets
+        run: python scripts/build_assets.py
+
+      - name: Build activity cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/build_stats.py
+
+      - name: Validate
+        run: python scripts/validate.py
+
+      - name: Commit changes
+        run: |
+          if [ -z "$(git status --porcelain assets)" ]; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git commit -m "chore(assets): refresh profile cards"
+          git push
