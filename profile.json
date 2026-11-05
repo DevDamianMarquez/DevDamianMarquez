@@ -60,7 +60,7 @@
       "name": "Nerva",
       "tag": "AI operations workspace  ·  In progress",
       "status": "Building",
-      "description": "Workspace where AI agents propose business actions and a human approves them. Through milestone 3: session auth, workspaces, approval flow and read-only Gmail import. Strict typing end to end.",
+      "description": "Workspace designed for AI agents that propose business actions for a human to approve. Built so far: session auth, workspaces, the approval flow and read-only Gmail import. The agent layer is next. Strict typing end to end.",
       "tech": ["FastAPI", "SQLAlchemy 2", "Alembic", "PostgreSQL", "mypy", "Next.js"],
       "href": "https://github.com/DevDamianMarquez/Nerva",
       "footer": "github.com/DevDamianMarquez/Nerva"

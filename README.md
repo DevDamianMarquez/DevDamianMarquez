@@ -39,7 +39,7 @@ Recently I built and deployed a catalog platform for a retail client, wrote an L
   </tr>
   <tr>
     <td><b>Building</b></td>
-    <td><a href="https://github.com/DevDamianMarquez/Nerva">Nerva</a>, a workspace where AI agents propose business actions and humans approve them</td>
+    <td><a href="https://github.com/DevDamianMarquez/Nerva">Nerva</a>, a workspace designed for AI agents that propose business actions for a human to approve (agent layer in progress)</td>
   </tr>
   <tr>
     <td><b>Looking for</b></td>
@@ -87,7 +87,7 @@ Recently I built and deployed a catalog platform for a retail client, wrote an L
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="./assets/static/project-nerva-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="./assets/static/project-nerva-light.svg">
-      <img alt="Nerva — AI operations workspace with human approval, in progress. FastAPI, SQLAlchemy 2, PostgreSQL, Next.js." src="./assets/static/project-nerva-dark.svg" width="49%">
+      <img alt="Nerva — AI operations workspace with human approval; auth, workspaces, approval flow and Gmail import built, agent layer in progress. FastAPI, SQLAlchemy 2, PostgreSQL, Next.js." src="./assets/static/project-nerva-dark.svg" width="49%">
     </picture>
   </a>
 </p>

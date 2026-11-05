@@ -3,6 +3,8 @@ name: Profile assets
 # Regenerates the README's SVG cards.
 # - Static assets (hero, stack, projects...) are rebuilt from profile.json.
 # - Activity cards are rebuilt from the public GitHub GraphQL API, daily.
+# The scripts use only the Python standard library, so the runner's
+# preinstalled python3 is enough and no extra actions are needed.
 
 on:
   schedule:
@@ -15,33 +17,32 @@ on:
       - scripts/**
       - .github/workflows/profile-assets.yml
 
-permissions:
-  contents: write
+# No permissions by default; the job below asks only for what it needs.
+permissions: {}
 
 concurrency:
   group: profile-assets
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # commit the regenerated SVGs back to this repository
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+      - uses: actions/checkout@v5
 
       - name: Build static assets
-        run: python scripts/build_assets.py
+        run: python3 scripts/build_assets.py
 
       - name: Build activity cards
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/build_stats.py
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/build_stats.py
 
       - name: Validate
-        run: python scripts/validate.py
+        run: python3 scripts/validate.py
 
       - name: Commit changes
         run: |
@@ -53,4 +54,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets
           git commit -m "chore(assets): refresh profile cards"
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main
